@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    font-family: "cinzel";
+    color: beige;
+    font-size: 7em ;
+
+}
+
+@font-face {
+    font-family: "cinzel";
+    src: url(../fonts/cinzel-v19-latin-700.woff2);
+
+
+}

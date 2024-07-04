@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.box{
+    width: 300px;
+    height: 300px;
+    color: white;
+    
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.box-static{
+    position: static;
+    background-color: aquamarine;
+}
+.box-absolut{
+    position: absolute;
+    background-color: aqua;
+    bottom: 100px;
+    left: -200px;
+}
+.box-fixel{
+    position: fixed;
+    background-color: blue;
+    width: 100%;
+    height: 70px;
+    top: 0%;
+    left: 0;
+}
+.parr-1{
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin: 40px;
+    text-align: justify;
+}
+

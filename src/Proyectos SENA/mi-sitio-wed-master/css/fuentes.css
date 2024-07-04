@@ -1,0 +1,6 @@
+h2{
+    font-size: 50px; /*tamaño de imagen*/
+        font-weight: 900; /*grosor de letra*/
+        font-style: italic;/*estilo de letra*/
+        font-family: 'Noto Sans', sans-serif;
+}

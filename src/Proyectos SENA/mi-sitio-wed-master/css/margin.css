@@ -1,0 +1,30 @@
+.box-style{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 19px;
+    display: inline-flex;
+     margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+     padding-left: 10px;
+   padding-top: 10px;
+   padding-bottom:10px ;
+   padding-right: 10px;
+}
+.box-1{
+    border: 2px solid rgb(64,64,64,.9);
+}
+/*borde dashed*/
+.box-2{
+    border: 2px dashed rgba(79, 79, 79, 0.9);
+}
+/*borde dotted*/
+.box-3{
+    border: 2px dotted rgb(83, 229, 127);
+}
+/*borde double*/
+.box-4{
+    border: 2px dotted rgb(62, 188, 163);
+  
+}

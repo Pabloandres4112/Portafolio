@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    display: grid;
+    width: 100%;
+    grid-template: "empty-let     main-page                empty-right" 100vh/
+                  minmax(50px,1fr)       minmax(900px,1200px)       minmax(50px,1fr)             ;
+  }
+  .main-page{
+    grid-area: main-page;
+  }
+  header{
+    display: grid;
+    gap: 30px;
+    margin-top: 50px;
+    grid-template:" logo    main-menu"80px/
+                    150px       minmax(700px,100%);
+  }
+  .logo{
+    border-radius: 15px;
+    grid-area: logo;
+    background-image: url("../img/LOG.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .main-menu{
+    grid-area: main-menu ;
+    display: none;
+    width: 100%;
+    background-image: url(../img/menu.jpg); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .style-tex{
+    font-family: verdana,sans-serif;
+    font-size: 1.6em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-content{
+    display: grid;
+    margin-top:15px ;
+    gap: 40px 70px ;
+    grid-template: "main-img  main-img  main-img" 600px
+                      "articulo-1   articulo-2    articulo-3 " 
+                      "articulo-4   articulo-5    articulo-6 "450px/
+                      1fr            1fr             1fr;
+  }
+  .main-img{
+    grid-area: main-img ;
+    background-image: url("../img/pexels-eberhard-grossgasteiger-1367192.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+  }
+  .articulo-1{
+    grid-area: articulo-1;
+  }
+  .articulo-2{
+    grid-area: articulo-2;
+  }
+  .articulo-3{
+    grid-area: articulo-3;
+  }
+  .articulo-4{
+    grid-area: articulo-4;
+  }
+  .articulo-5{
+    grid-area: articulo-5;
+  }
+  .articulo-6{
+    grid-area: articulo-6;
+  }
+  .img-articullo{
+    height: 350px;
+    border-radius: 15px;
+  }
+  .style-tex-img{
+    text-align: center;
+    font-size: 1.2em;
+    color:  rgb(64,64,64.9);
+    font-family: verdana, sans-serif;
+    font-weight: 2em;
+    text-align: justify;
+  }
+  .img-1{
+    width: 100%;
+    background-image: url(../img/img1.jpg); /* este es sin aumentp vista pc */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .img-2{
+    background-image: url(../img/pexels-matteo-badini-4064432.jpg); /* este es sin aumentp vista pc */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .img-3{
+    
+    width: 100%;
+    background-image: url(../img/pexels-gianluca-grisenti-4215113.jpg); /* este es sin aumentp vista pc */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .img-4{
+    
+    width: 100%;
+    background-image: url(../img/andres.jpg); /* este es sin aumentp vista pc */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .img-5{
+    
+    width: 100%;
+    background-image: url(../img/pexels-stephan-seeber-1261728.jpg); /* este es sin aumentp vista pc */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .img-6{
+    
+    width: 100%;
+    background-image: url(../img/pexels-photo-531321.jpeg); /* este es sin aumentp vista pc */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .main-menu {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .main-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 200px;
+  }
+  
+  .main-menu li {
+    font-size: 1.2em;
+    margin-right: 50px;
+  }
+  
+  .main-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+    
+  }
+  
+  .main-menu a:hover {
+    color: #666;
+  }
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 452px) {
+    body {
+        grid-template:
+            "main-page"
+            "main-page"/
+              100%;
+    }
+  
+    .main-page {
+        margin: 20px;
+    }
+  
+    header {
+        grid-template:        "logo         menu-toggle" 80px /
+                              100px        minmax(50px, 500px);
+    }
+  
+    .main-content {
+        grid-template:
+            "main-img"
+            300px
+            "articulo-1"
+            auto
+            "articulo-2"
+            auto
+            "articulo-3"
+            auto
+            "articulo-4"
+            auto
+            "articulo-5"
+            auto
+            "articulo-6"
+            auto / 100%;
+    }
+  
+    .img-articullo {
+        height: 200px;
+    }
+    .menu-toggle {
+        display: block;
+        background-color: #fff;
+        margin-top: -200px;
+    }
+  
+    .main-menu ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0, 0.8);
+        position: absolute;
+        top: 160px;
+        left: 15px;
+        padding: 0;
+    }
+  
+    .menu-active .main-menu ul {
+        display: flex;
+    }
+  
+    .main-menu li {
+        font-size: 1.2em;
+        margin: 0;
+        padding: 10px 20px;
+        border-bottom: 1px solid #fff;
+    }
+  }

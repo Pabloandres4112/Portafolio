@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sobre mi</title>
+    <link rel="stylesheet" href="src/css/sibre_mi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="sobre_mi.html">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>Sobre Mí</h2>
+        <p>Soy un desarrollador web apasionado por crear experiencias digitales increíbles.</p>
+    </section>
+    <section id="skills">
+        <div class="ContainerHavilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li class="skill-item" onclick="toggleSkillDetail('html')"><i class="fab fa-html5"></i> HTML</li>
+                <li class="skill-item" onclick="toggleSkillDetail('css')"><i class="fab fa-css3-alt"></i> CSS</li>
+                <li class="skill-item" onclick="toggleSkillDetail('javascript')"><i class="fab fa-js"></i> JavaScript</li>
+                <li class="skill-item" onclick="toggleSkillDetail('nodejs')"><i class="fab fa-node-js"></i> Node.js</li>
+                <li class="skill-item" onclick="toggleSkillDetail('mysql')"><i class="fas fa-database"></i> MySQL</li>
+                <li class="skill-item" onclick="toggleSkillDetail('git')"><i class="fab fa-git-alt"></i> GIT</li>
+                <li class="skill-item" onclick="toggleSkillDetail('react')"><i class="fab fa-react"></i> React</li>
+                <li class="skill-item" onclick="toggleSkillDetail('reactnative')"><i class="fab fa-react"></i> React Native</li>
+            </ul>
+
+        </div>
+        <div id="css" class="skill-detail">
+            <h3><i class="fab fa-css3-alt"></i> CSS</h3>
+            <p>CSS (Cascading Style Sheets) es un lenguaje utilizado para definir el aspecto visual y la presentación de páginas web.</p>
+            <code>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                }
+        
+                h1 {
+                    color: #333;
+                    text-align: center;
+                }
+        
+                .container {
+                    max-width: 960px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                }
+            </code>
+        </div>
+        
+        <div id="react" class="skill-detail">
+            <h3><i class="fab fa-react"></i> React</h3>
+            <p>React es una biblioteca de JavaScript utilizada para construir interfaces de usuario interactivas y reutilizables.</p>
+            <code>
+                function Welcome(props) {
+                    return <h1>Hola, {props.name}</h1>;
+                }
+        
+                const element = <Welcome name="Usuario" />;
+                ReactDOM.render(element, document.getElementById('root'));
+            </code>
+        </div>
+        
+        <div id="reactnative" class="skill-detail">
+            <h3><i class="fab fa-react"></i> React Native</h3>
+            <p>React Native es un marco de desarrollo de aplicaciones móviles que permite a los desarrolladores crear aplicaciones nativas utilizando React y JavaScript.</p>
+            <code>
+                import React from 'react';
+                import { Text, View } from 'react-native';
+        
+                const App = () => {
+                    return (
+                        <View>
+                            <Text>Hola, mundo!</Text>
+                        </View>
+                    );
+                };
+        
+                export default App;
+            </code>
+        </div>
+        
+        <div id="javascript" class="skill-detail">
+            <h3><i class="fab fa-js"></i> JavaScript</h3>
+            <p>JavaScript es un lenguaje de programación dinámico utilizado para crear interactividad y funcionalidades avanzadas en páginas web.</p>
+            <code>
+                function greet(name) {
+                    return 'Hola, ' + name + '!';
+                }
+        
+                console.log(greet('Mundo'));
+            </code>
+        </div>
+        
+        <div id="nodejs" class="skill-detail">
+            <h3><i class="fab fa-node-js"></i> Node.js</h3>
+            <p>Node.js es un entorno de ejecución de JavaScript diseñado para crear aplicaciones de servidor escalables y eficientes.</p>
+            <code>
+                const express = require('express');
+                
+                const http = express();
+        
+                http.listen(8000, () => {
+                    console.log('Servidor escuchando en el puerto 8000');
+                });            
+            </code>
+        </div>
+        
+        <div id="mysql" class="skill-detail">
+            <h3><i class="fas fa-database"></i> MySQL</h3>
+            <p>MySQL es un sistema de gestión de bases de datos relacional ampliamente utilizado en aplicaciones web para almacenar y administrar datos de manera eficiente.</p>
+            <code>
+                CREATE TABLE usuarios (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    nombre VARCHAR(50),
+                    email VARCHAR(50)
+                );
+            </code>
+        </div>
+        
+        <div id="git" class="skill-detail">
+            <h3><i class="fab fa-git-alt"></i> GIT</h3>
+            <p>GIT es un sistema de control de versiones distribuido utilizado para el seguimiento de cambios en el código fuente durante el desarrollo de software.</p>
+            <code>
+                git init
+                git add .
+                git commit -m "Primer commit"
+            </code>
+        </div>
+        
+        <div id="html" class="skill-detail">
+            <h3><i class="fab fa-html5"></i> HTML</h3>
+            <p>HTML (HyperText Markup Language) es el lenguaje estándar utilizado para crear la estructura y el contenido de páginas web.</p>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="es"&gt;<br>
+                &nbsp;&nbsp;&lt;head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Primer Hola Mundo&lt;/title&gt;<br>
+                &nbsp;&nbsp;&lt;/head&gt;<br>
+                &nbsp;&nbsp;&lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hola, mundo!&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&lt;/body&gt;<br>
+                &lt;/html&gt;
+            </code>
+        </div>
+        
+
+
+        </div>
+    </section>
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <div class="project">
+            <h3>Aprendiendo CSS , HTML Y JS</h3>
+            <p>Acá fueron mis primeros pasos en el tema de CSS y HTML.</p>
+            <a href="Proyectos.html" class="view-more nav-link">Ver todos los proyectos</a>
+        </div>
+        <div class="project">
+            <h3>Proyecto formativo</h3>
+            <p>aca te mando a git para que descrage el Proyecto formativo de 'AGRO_REGISTER'</p>
+        </div>
+    </section>
+    <div class="containercontactos">
+        <section id="contact" class="contact">
+            <h2>Contacto</h2>
+            <p>Correo: <a href="mailto:perdomo4112@gmailcom">perdomo4112@gmailcom</a></p>
+            <!-- <p>LinkedIn: <a href="https://www.linkedin.com/in/tuusuario/" target="_blank">tuusuario</a></p> -->
+            <p>Git: <a href="https://github.com/Pabloandres4112">https://github.com/Pabloandres4112</a></p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Pablo. Todos los derechos reservados.</p>
+    </footer>
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>

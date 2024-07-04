@@ -1,0 +1,74 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0%;
+    margin: 0%;
+}
+
+nav {
+    background: rgb(0, 0, 0);
+}
+
+nav ul {
+
+    background-color: rgb(168, 168, 168);
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    display: table;
+    display: block;
+    list-style: none;
+}
+
+/*Acceder a los hijos directamente usando signo ">" */
+nav>ul>li {
+    width: 190px;
+    /* Separa (Funciona como un padding )*/
+    float:left;
+    /* Alinear (Funciona como un display block)*/
+    line-height: 50px
+        /* Interlineado (Centrar vertical)*/
+}
+
+nav a {
+    /* padding: 0 1em; */
+    font-size: 1.1em;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+nav li {
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+}
+
+nav li li {
+    max-height: 0;
+    overflow: hidden;
+}
+nav ul li:hover{
+    background-color:  rgb(112, 86, 139);
+}
+nav ul li ul li:hover {
+    border-radius: 10px;
+    background-color: rgb(112, 86, 139);
+}
+
+nav li:hover>ul>li {
+    max-height: 500px;
+    visibility: visible;
+    overflow: visible;
+}
+
+nav ul ul ul {
+    top: 0%;
+    
+    left: 100%;
+}
+.icons{
+    color: aliceblue;
+    margin-left: 8px;
+}
+nav ul li ul{
+    border-radius: 10px;
+}

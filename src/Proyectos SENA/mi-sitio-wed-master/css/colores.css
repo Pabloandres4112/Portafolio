@@ -1,0 +1,90 @@
+:root {
+    --primary-bg-color: aqua;
+    --secondary-bg-color: aquamarine;
+    --tertiary-bg-color: goldenrod;
+    --fourth-bg-color: rgb(82, 255, 144);
+    --fifth-bg-color: rgb(31, 217, 188);
+    --sixth-bg-color: rgb(54, 26, 177);
+    --seventh-bg-color: #4FE8C5;
+    --eighth-bg-color: #077087;
+    --ninth-bg-color: #1c92ad;
+}
+
+.box-colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box-style {
+    width: calc(33.33% - 20px);
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 12px; /* Más redondeado */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra más intensa */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0; /* Comenzar oculto */
+    animation: fadeIn 0.5s forwards; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.box-style:hover {
+    transform: scale(1.1);
+}
+
+.box-style:hover .span {
+    transform: translateY(-10px);
+}
+
+.span {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease-in-out;
+}
+
+.box-1 {
+    background-color: var(--primary-bg-color);
+}
+
+.box-2 {
+    background-color: var(--secondary-bg-color);
+}
+
+.box-3 {
+    background-color: var(--tertiary-bg-color);
+}
+
+.box-4 {
+    background-color: var(--fourth-bg-color);
+}
+
+.box-5 {
+    background-color: var(--fifth-bg-color);
+}
+
+.box-6 {
+    background-color: var(--sixth-bg-color);
+}
+
+.box-7 {
+    background-color: var(--seventh-bg-color);
+}
+
+.box-8 {
+    background-color: var(--eighth-bg-color);
+}
+
+.box-9 {
+    background-color: var(--ninth-bg-color);
+}

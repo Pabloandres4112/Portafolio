@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../img/andres.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.lateral {
+    background-color: rgba(207, 207, 207, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 20px;
+    scroll-behavior: smooth;
+    z-index: 1000; /* Asegura que el menú esté sobre otros elementos */
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.lists {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.lists:hover {
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.lists i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #5b6bb3;
+}
+
+.lists span {
+    font-size: 16px;
+}
+
+.listos {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #5c7f97;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #999;
+    margin: 10px 0;
+}

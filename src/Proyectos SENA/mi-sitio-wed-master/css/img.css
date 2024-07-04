@@ -1,0 +1,22 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.box-main-img{
+    width: 100%;
+    background-image:url("../img/pexels-eberhard-grossgasteiger-1367192.jpg") ;
+    display: hidden;
+    width: 100%;
+    height: 1260px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@media only screen and (max-width:430px){
+    .box-main-img{
+        background-image: url("../img/movil.png");
+        display: block;
+        width: 100%;
+        height: 800px;
+    }
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Amazon</title>
+  <link rel="stylesheet" href="css/amaazon.css"/>
+  <link rel="shortcut icon" href="./css/img-amazon/amazon-logo-on-transparent-background-free-vector.jpg"
+    type="image/x-icon" />
+    <link rel="stylesheet" href="ico/all.css">
+</head>
+
+<body>
+<div id="principal">
+  <header>
+    <div class="header-logo">
+      <img class="img-main-logo" src="img/amason/amazon-logo-free .png" alt="" />
+    </div>
+    <div class="header-enviar-a">
+      <div class="box-icon-location">
+        <i class="bx bxs-location-plus"></i>
+      </div>
+      <div class="box-texto-enviar-a">
+        <span class="texto-enviar-a">Enviar a</span>
+      </div>
+      <div class="box-texto-colombia">
+        <span class="texto-colombia">Colombia</span>
+      </div>
+    </div>
+    <div class="box-header-search-input">
+      <div class="header-search-input">
+        <div class="box-filtro-todos">
+          <div class="filtro-todos">
+            <span class="header-todos">Todos</span>
+            <i class="icon-chevron fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+        <div class="box-buscar-amazon">
+          <div class="buscar-amazon">
+            <input class="input-busqueda" type="text" name="" id="" placeholder="Buscar Amazon" />
+          </div>
+        </div>
+        <div class="box-lupa">
+          <div class="lupa">
+            <i class="bx bx-search-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-country-flag">
+      <div class="box-flag">
+        <img src="css/img-amazon/Flag_of_the_United_States.svg.png" alt="" />
+        <div class="idioma">
+          <span class="txt-idioma">EN</span>
+          <div class="down-arrow">
+            <i class="bx bxs-down-arrow"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-identificate">
+      <div class="box-signin">
+        <span>Hello, sign in</span>
+        <span class="text-signin">Account & List</span>
+        <i class="bx bxs-down-arrow"></i>
+      </div>
+    </div>
+    <div class="header-devoluciones">
+      <span>Retums</span>
+      <span class="text-signin">& Orders</span>
+    </div>
+    <div class="header-carrito">
+      <i class="bx bxs-cart-alt"></i>
+    </div>
+  </header>
+  
+  <div class="botones-inferiores">
+    <div class="botones-infe">
+      <span class="buton-hamburger-menu">
+        <i class="bx bx-menu"></i>
+      </span>
+      <div class="btn-infe">
+        <span class="btn-text"> Todo </span>
+        <span class="btn-text"> Ofertas del Día </span>
+        <span class="btn-text"> Servicio al Cliente </span>
+        <span class="btn-text"> Listas </span>
+        <span class="btn-text"> Tarjetas de Regalo </span>
+        <span class="btn-text"> Vender </span>
+      </div>
+    </div>
+  </div>
+  <div class="volver-resultados">
+    <span>
+      < </span>
+        <a class="volver-res" href="#"><img src="/images/icons/back.svg" alt="" /> Volver a resultados</a>
+  </div>
+  <!--! 1, contenedor de la primera caja donde se encuentra la lsita de imagenes-->
+  <div class="contenido box-contenido-producto">
+    <div class="contenido box-contenido-img-muestra">
+      <div class="box-imagen-muestra muestra-1">
+        <img  id="img" class="img-mano-thumbnail" src="img/amason/img1.jpg" alt="" />
+      </div>
+      <div id="minImg1"  class="box-imagen-muestra muestra-2">
+        <img src="img/amason/img2.jpg" class="img-mano-thumbnail" alt="" />
+      </div>
+      <div id="minImg2"  class="box-imagen-muestra muestra-3">
+        <img src="img/amason/img3.jpg" class="img-mano-thumbnail" alt="" />
+      </div>
+
+      <div id="minImg3"  class="box-imagen-muestra muestra-4">
+        <img src="img/amason/img4.jpg" class="img-mano-thumbnail" alt="" />
+      </div>
+
+      <div id="minImg4"  class="box-imagen-muestra muestra-5">
+        <img src="img/amason/img5.jpg" class="img-mano-thumbnail" alt="" />
+      </div>
+
+      <div id="minImg5" class="box-imagen-muestra muestra-6">
+        <img src="img/amason/img7.jpg" class="img-mano-thumbnail" alt="" />
+      </div>
+
+
+
+      <div id="minImg7"  class="box-imagen-muestra muestra-8">
+        <img src="img/amason/img9.jpg" class="img-mano-thumbnail" alt="" />
+      </div>
+    </div>
+    <!--! 2, contenedor de la segunda caja donde se encuentra la imagen de muestra grande -->
+    <div class="contenido box-contenido-img-grande">
+      <div id="imgBig1" class="box-img-grande">
+        <img id="imgBig"  src="img/amason/img1.jpg" class="img-mano-thumbnail" alt="" />
+      </div>
+      <div class="box-text-img-grande">
+        <span class="txt-img-grande">Pasa el mouse encima de la imagen para aplicar zoom</span>
+        <span class="txt-img-grande display-none">has click en la imagen para tener una vista ampliada</span>
+      </div>
+    </div>
+    <!--! 3, contenedor de la tercera caja donde se encuentra la descripcion -->
+    <div class="contenido box-contenido-deescripcion">
+      <div class="box-seccion-1 seccion">
+        <div class="txt-seccion">
+          <span>Skytech Blaze 3.0 Gaming PC Desktop – Intel Core i5 10400F 2.9 GHz,
+            RTX 3060, 1TB SSD, 16G DDR4 3200, 600W Gold PSU, AC Wi-Fi, Windows 10 Home 64 bits</span>
+        </div>
+        <div class="txt-marca-seccion">
+          <a class="txt-marca" href="">Marca: Skytech Gaming</a>
+        </div>
+
+        <!-- etsrllas  -->
+        <div id="half-stars-example" style="display: flex; flex-direction: row; gap: 3px;">
+          <p id="current-rating">2.5</p>
+          <div class="rating-group">
+              <input class="rating__input rating__input--none" checked name="rating2" id="rating2-0"
+                  value="0" type="radio">
+              <label aria-label="0 stars" class="rating__label" for="rating2-0"><box-icon name='star' ></box-icon></label>
+              <label aria-label="0.5 stars" class="rating__label rating__label--half" for="rating2-05">
+                  <i class="rating__icon rating__icon--star fa fa-star-half"></i>
+              </label>
+              <input class="rating__input" name="rating2" id="rating2-05" value="0.5" type="radio">
+              <label aria-label="1 star" class="rating__label" for="rating2-10">
+                  <i class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-10" value="1" type="radio">
+              <label aria-label="1.5 stars" class="rating__label rating__label--half" for="rating2-15"><i
+                      class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-15" value="1.5" type="radio">
+              <label aria-label="2 stars" class="rating__label" for="rating2-20"><i
+                      class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-20" value="2" type="radio">
+              <label aria-label="2.5 stars" class="rating__label rating__label--half" for="rating2-25"><i
+                      class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-25" value="2.5" type="radio"
+                  checked>
+              <label aria-label="3 stars" class="rating__label" for="rating2-30"><i
+                      class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-30" value="3" type="radio">
+              <label aria-label="3.5 stars" class="rating__label rating__label--half" for="rating2-35"><i
+                      class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-35" value="3.5" type="radio">
+              <label aria-label="4 stars" class="rating__label" for="rating2-40"><i
+                      class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-40" value="4" type="radio">
+              <label aria-label="4.5 stars" class="rating__label rating__label--half" for="rating2-45"><i
+                      class="rating__icon rating__icon--star fa fa-star-half"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-45" value="4.5" type="radio">
+              <label aria-label="5 stars" class="rating__label" for="rating2-50"><i
+                      class="rating__icon rating__icon--star fa fa-star"></i></label>
+              <input class="rating__input" name="rating2" id="rating2-50" value="5" type="radio">
+          </div>
+          <label for="" class="text_azul">10 calificaciones</label>
+      </div>
+
+</div>
+
+      <hr />
+      <div class="box-seccion-2 seccion">
+        <div class="seccion-2-item-precio">
+          <span class="tamaño-menor">
+            US$
+            <span class="tamaño-mayor"> 28,910 </span>
+            .85
+          </span>
+        </div>
+
+        <div class="seccion-2-item-devoluciones">
+          <div class="item-devoluciones">
+            <span class="azul devoluciones-tamaño-menor"> Devoluciones </span>
+            <span class="azul devoluciones-tamaño-mayor"> GRATIS </span>
+          </div>
+          <div class="item-devoluciones">
+            <span class="text-item-devoluciones-inport">Sin cargos de importación y US$10.96 de envío a Colombia</span>
+            <a class="no-estilos azul" href="#">Detalles</a>
+          </div>
+
+          <div class="item-devoluciones-2">
+            <span class="text-item-devoluciones-info-envio">Disponible a un precio menor de
+
+          </div>
+        </div>
+        <div class="seccion-2-item-3">
+          <div class="item-caracteristicas">
+            <div class="item-caracteristicas-1">
+              <span class="negrita"> Usos </span>
+              <span class="negrita"> Marca </span>
+              <span class="negrita"> Tipo  </span>
+              <br>
+              <span class="negrita">Sistema operativo</span>
+            </div>
+            <div class="item-caracteristicas-2">
+              <span>Multimedia,Personal,Videojuegos</span>
+              <span> Skytech Gaming </span>
+              <span> Torre de ordenador </span>
+              <br>
+              <span>  Windows 11 Home</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="box-seccion-3 seccion">
+        <div class="seccion-3-item-1">
+          <div class="title-sobre-articulo">
+            <h4>Acerca de este artículo</h4>
+          </div>
+          <div class="lista-sobre-articulo">
+            <ul class="lista-articulo">
+              <li>
+                Procesador de CPU INTEL Core i5 10400F 2.9GHz (4.3GHz Max Boost) | SSD de 1 TB, hasta 30 veces más rápido que el disco duro tradicional
+              </li>
+              <li>
+                RTX 3060 Tarjeta gráfica GDDR6 de 12 GB (la marca puede variar) | Memoria para juegos 16G 3200 DDR4 con disipador de calor | Windows 10 Home 64 bits
+              </li>
+              <li>
+                802.11AC | Sin Bloatware | Las opciones de salida gráfica incluyen 1 HDMI y 1 puerto de visualización garantizado, los puertos adicionales pueden variar | Puertos USB incluyendo puertos 2.0, 3.0 y 3.2 Gen1 | Audio HD y micrófono | Teclado y mouse para juegos gratuitos
+              </li>
+              <li>
+                3 ventiladores RGB de doble anillo para un máximo flujo de aire | Phantek Metallic Gear Neo Air Case, edición negra con malla frontal | 1 año de garantía en piezas y mano de obra | Soporte técnico gratuito de por vida | Montado en los Estados Unido
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--! 4, contenedor de la cuarta caja donde se encuentra un resumen de la compra para agregar al carrito -->
+    <div class="contenido box-contenido-compra">
+      <div class="box-contenido-compra-margen">
+        <div class="seccion-2-item-precio">
+          <span class="tamaño-menor">
+            US$
+            <span class="tamaño-mayor"> 28,910 </span>
+            .85
+          </span>
+        </div>
+        <div class="item-devoluciones">
+          <span class="devoluciones-tamaño-menor"> Devoluciones </span>
+          <span class="devoluciones-tamaño-mayor"> GRATIS </span>
+        </div>
+        <div class="item-devoluciones">
+          <span class="text-item-devoluciones">Sin cargos de importación y US$10.96 de envío a Colombia</span>
+          <a class="no-estilos azul" href="#">Detalles</a>
+        </div>
+        <div class="contenido-info">
+          <span class="contenido-info-separacion-1">Entrega GRATIS el <span class="negrita">martes, 7 de diciembre a
+            </span>Colombia en pedidos
+            elegibles de más de $35</span>
+          <span class="contenido-info-separacion-2">O entrega más rápida el <span class="negrita"> viernes, 2 de
+              diciembre.</span> Realiza el pedido
+            en <span class="verde">5 hrs 20 mins</span></span>
+        </div>
+        <div class="contenido-enviar">
+          <div class="box-icon-location">
+            <i class="bx bxs-location-plus"></i>
+          </div>
+          <a class="no-estilos azul" href="#">Enviar a colombia</a>
+        </div>
+        <div class=" contenido-advertencia-stock">
+          <span class="rojo advertencia-stock"></span>
+        </div>
+        <div class="contenido-cantidad">
+          <select class="contenido-lista-cantidad" name="" id="">
+            <option value="">Cantidad :1</option>
+            <option value="">Cantidad :2</option>
+            <option value="">Cantidad :3</option>
+            <option value="">Cantidad :4</option>
+            <option value="">Cantidad :5</option>
+            <option value="">Cantidad :6</option>
+            <option value="">Cantidad :7</option>
+            <option value="">Cantidad :8</option>
+            <option value="">Cantidad :9</option>
+            <option value="">Cantidad :10</option>
+            <option value="">Cantidad :11</option>
+          </select>
+        </div>
+        <div class="btn-agregar-comprar">
+          <div class="btn-agregar-carrito">
+            <div class="agregar">agregar al carrito</div>
+          </div>
+          <div class="btn-comprar-ahora">
+            <div class="comprar">Comprar ahora</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</heder>
+</div>
+
+  <!--///////////////////////// Fin Header///////////////////// -->
+
+  <!-- /////////////////desplegable///////////////////////////////// -->
+  <div id="mainContent" class="desplegable main-content">
+    <div class="box-modal">
+      <div class="modal">
+        <div id="btnClose" class="btn-close"><i class="bx bx-x"></i></div>
+
+        <div id="imgModal" class="img1 box-img-modal">
+          <div class="img-principal">
+            <img class="main-img-modal" src="img/amason/img1.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="info-modal">
+          <span class="txt-caracteristicas-modal">PJMarts Thing Hand Props Realistic Hand Ornament Creative
+            Figurine Home Decor Desktop Crafts Sculpture Decoration Life
+            Size</span>
+          <span class="txt-sub-description-modal">Estilo:Thing</span>
+          <div id="boxContentImg" class="box-modal-img">
+            <div id="img1" class="box-img-1 img">
+              <img src="img/amason/img1.jpg" alt="" />
+            </div>
+            <div id="img2" class="box-img-2 img">
+              <img src="img/amason/img2.jpg" alt="" />
+            </div>
+            <div id="img3" class="box-img-3 img">
+              <img src="img/amason/img3.jpg" alt="" />
+            </div>
+            <div id="img4" class="box-img-4 img">
+              <img src="img/amason/img4.jpg" alt="" />
+            </div>
+            <div id="img5" class="box-img-5 img">
+              <img src="img/amason/img5.jpg" alt="" />
+            </div>
+            <div id="img6" class="box-img-6 img">
+              <img src="img/amason/img6.jpg" alt="" />
+            </div>
+            <div id="img7" class="box-img-7 img">
+              <img src="img/amason/img7.jpg" alt="" />
+            </div>
+            <div id="img8" class="box-img-8 img">
+              <img src="img/amason/img8.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin del desplegable -->
+
+  <script src="js/amazon.js"></script>
+</body>
+</html>

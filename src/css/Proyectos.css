@@ -1,0 +1,83 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #1f1f1f; /* Color de fondo oscuro */
+    color: #fff; /* Texto en color blanco */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.return-link {
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Ajusta la posición a la esquina superior derecha */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.return-link svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px; /* Ajusta el margen izquierdo del ícono */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas con tamaño flexible */
+    gap: 20px; /* Espacio entre los proyectos */
+    padding: 20px; /* Espacio interno para separar del borde */
+    justify-items: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.project {
+    flex: 1 0 21%; /* Ajusta el ancho de cada proyecto */
+    text-align: center;
+    background-color: #333; /* Fondo más oscuro para cada proyecto */
+    padding: 10px; /* Espacio interno dentro de cada proyecto */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+    animation: floating 3s infinite alternate ease-in-out; /* Animación de flotación */
+}
+
+.main-project {
+    grid-column: span 4; /* Ocupa cuatro columnas en el grid */
+    animation: none; /* Deshabilita la animación en el proyecto principal */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px; /* Espacio entre el título y los proyectos */
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+.project p {
+    margin-top: 1em;
+    font-size: 14px; /* Tamaño de fuente para el texto del proyecto */
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px); /* Desplazamiento hacia abajo */
+    }
+}

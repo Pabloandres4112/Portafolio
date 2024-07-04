@@ -1,0 +1,55 @@
+* {
+    font-family: 'Gill Sans', sans-serif;
+}
+.contenedor1-off {
+    width: 250px;
+    height: 120px;
+    background: rgb(7, 214, 62);
+    border-radius: 55px;
+    padding: 3px;
+    transition: all 1s;
+}
+.contenedor1-on {
+    width: 250px;
+    height: 120px;
+    border-radius: 55px;
+    padding: 3px;
+    transition: all 1s;
+    background-color: rgb(103, 104, 103);
+    cursor: pointer;
+}
+.contenedor2-off {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    background: white;
+    top: -32px;
+    left: 5px;
+    border-radius: 50%;
+    transition: all 1s;
+}
+.contenedor2-on {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    background: white;
+    top: -32px;
+    left: 135px;
+    border-radius: 50%;
+    transition: all 1s;
+}
+.text-on-off {
+    font-size: 2em;
+    font-weight: 700;
+    color: white;
+}
+.text-on {
+    position: relative;
+    top: 39px;
+    left: 20px;
+}
+.text-off {
+    position: relative;
+    top: 39px;
+    left: 120px;
+}

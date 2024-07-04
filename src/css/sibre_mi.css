@@ -1,0 +1,358 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #1f1f1f;
+    color: #ccc;
+    overflow-x: hidden;
+    transition: opacity 0.8s ease-out; /* Transición para el desvanecimiento */
+}
+body.fade-out {
+    opacity: 0;
+}
+
+/* Eliminar barra de desplazamiento en navegadores WebKit */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Nav Bar */
+.nav-bar {
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.nav-bar ul li {
+    margin: 0 15px;
+}
+
+.nav-bar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-bar ul li a:hover {
+    color:  #aaa;
+    text-shadow: 0 0 10px #fff;
+}
+
+/* Adjust the hero section to account for the fixed nav-bar */
+.hero {
+    height: 100px;
+    margin-top: 60px; /* Adjust this margin based on your design */
+}
+
+.container-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    position: relative;
+}
+
+.hero-image {
+    position: absolute;
+    left: 700px; /* Adjust positioning as needed */
+}
+
+.hero-image img {
+    max-width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.hero-content {
+    margin-left: 20px;
+    margin-right: 250px; /* Adjust spacing */
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content:hover {
+    color: rgba(128, 4, 115, 0.8);
+    text-shadow: 0 0 10px rgba(128, 4, 115, 0.8);
+}
+
+section {
+    padding: 60px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: #2f2f2f;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+section p {
+    color: #ddd;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Estilos para los elementos de habilidades */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#skills ul li {
+    list-style: none;
+    background: #3f3f3f;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 0 20%; /* Cada elemento ocupa inicialmente el 20% del contenedor */
+    animation: floating 3s infinite alternate ease-in-out; /* Animación de flotación */
+}
+
+@media (max-width: 900px) {
+    #skills ul li {
+        flex: 1 0 30%; /* En pantallas más pequeñas, cada elemento ocupa el 30% */
+    }
+}
+
+@media (max-width: 600px) {
+    #skills ul li {
+        flex: 1 0 40%; /* En pantallas muy pequeñas, cada elemento ocupa el 40% */
+    }
+}
+
+/* Aplicar estilos especiales al cuarto elemento de cada fila */
+#skills ul li:nth-child(4n + 1) {
+    margin-left: 0; /* Reinicia el margen izquierdo para cada fila */
+}
+
+/* Animación de flotación */
+
+
+.skill-detail {
+    display: none;
+    background: #444;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.skill-detail h3 {
+    color: #fff;
+}
+
+.skill-detail p {
+    color: #ddd;
+}
+
+.skill-detail code {
+    display: block;
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #fff;
+    overflow-x: auto;
+}
+
+#skills ul li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#projects .project {
+    background: #4f4f4f;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+#projects .project:hover {
+    background-color: #555;
+}
+
+.containercontactos {
+    margin-bottom: 200px;
+}
+
+.contact {
+    text-align: center;
+    padding: 40px 20px;
+    background: #2f2f2f;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact p {
+    color: #ddd;
+}
+
+.contact a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s, padding 0.5s;
+    font-size: 0.8em;
+}
+
+footer.visible {
+    opacity: 1;
+    padding: 10px 0;
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.circles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(128, 4, 115, 0.8);
+    border-radius: 50%;
+    animation: float 9s linear infinite;
+    pointer-events: none;
+}
+
+
+
+/* Typing Effect */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid rgb(187, 121, 0); /* The cursor */
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(160, 0, 253); }
+}
+
+/* Estilos generales para el detalle de la habilidad */
+.skill-detail {
+    background-color: #282A36; /* Color de fondo oscuro similar a VSCode */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    font-family: 'Fira Code', monospace; /* Fuente monoespaciada similar a la de VSCode */
+    color: #C5C7CB; /* Color de texto claro para contrastar con el fondo oscuro */
+}
+
+.skill-detail h3 {
+    color: #E06C75; /* Título en rojo brillante para destacar */
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.skill-detail p {
+    color: #98C379; /* Descripción en verde claro para mejorar la legibilidad */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Estilos para el bloque de código */
+.skill-detail code {
+    background-color: #44475A; /* Fondo oscuro para el bloque de código */
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap; /* Mantiene el formato del código */
+    font-family: inherit; /* Hereda la fuente monoespaciada del contenedor padre */
+    font-size: 14px;
+    color: #ABB2BF; /* Texto en gris claro para el código */
+    overflow-x: auto; /* Permite desplazamiento horizontal si el código es demasiado ancho */
+}
+
+/* Estilos para mejorar la legibilidad del código */
+.skill-detail code::before,
+.skill-detail code::after {
+    content: "\00a0"; /* Espacio antes y después del código para evitar que el texto adyacente se pegue al código */
+}

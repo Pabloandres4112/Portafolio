@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: grid;
+    width: 100%;
+    grid-template: "empty-let     main-page                empty-right" 100vh/
+                 minmax(50px,1fr)       minmax(900px,1200px)       minmax(50px,1fr)             ;
+}
+.main-page{
+    grid-area: main-page;
+}
+header{
+    display: grid;
+    gap: 30px;
+    margin-top: 50px;
+    grid-template:" logo    main-menu"80px/
+                    150px       minmax(700px,100%);
+}
+.logo{
+    border-radius: 15px;
+    grid-area: logo;
+    background-color: goldenrod;
+}
+.main-menu{
+    grid-area: main-menu ;
+    background-color: rgb(30,167,69);
+}
+.style-tex{
+    font-family: verdana,sans-serif;
+    font-size: 1.6em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-content{
+    display: grid;
+    margin-top:15px ;
+    gap: 40px 70px ;
+    grid-template: "main-img  main-img  main-img" 600px
+                     "articulo-1   articulo-2    articulo-3 " 
+                     "articulo-4   articulo-5    articulo-6 "450px/
+                      1fr            1fr             1fr;
+}
+.main-img{
+    grid-area: main-img ;
+    background-color: darkcyan;
+    border-radius: 15px;
+}
+.articulo-1{
+    grid-area: articulo-1;
+}
+.articulo-2{
+    grid-area: articulo-2;
+}
+.articulo-3{
+    grid-area: articulo-3;
+}
+.articulo-4{
+    grid-area: articulo-4;
+}
+.articulo-5{
+    grid-area: articulo-5;
+}
+.articulo-6{
+    grid-area: articulo-6;
+}
+.img-articullo{
+    height: 350px;
+    background-color: rgb(64,64,64.8);
+    border-radius: 15px;
+}
+.style-tex-img{
+    text-align: center;
+    font-size: 1.2em;
+    color:  rgb(64,64,64.9);
+    font-family: verdana, sans-serif;
+    font-weight: 2em;
+    text-align: justify;
+}
+@media only screen and (max-width: 452px) {
+    body {
+        grid-template:
+          "main-page"
+          auto
+          "main-page"
+          auto / 100%;
+    }
+    
+    .main-page {
+        margin: 20px;
+      }
+      header{
+        grid-template: "logo    main-menu"80px/
+                        100px       minmax(50px , 500px);
+        justify-content: center;
+      }
+      .main-content{
+        grid-template: 
+        "main-img"
+        300px
+        "articulo-1"
+        auto
+        "articulo-2"
+        auto
+        "articulo-3"
+        auto
+        "articulo-4"
+        auto
+        "articulo-5"
+        auto
+        "articulo-6"
+        auto / 100%;
+      }
+      .img-articullo{
+        height: 200px;
+      }
+}
