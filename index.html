@@ -6,6 +6,194 @@
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="icon" href="src/img/logo.ico">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1f1f1f;
+            color: #ccc;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            transition: opacity 0.8s ease-out;
+        }
+
+        body.fade-out {
+            opacity: 0;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Nav Bar */
+        .nav-bar {
+            width: 100%;
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .nav-bar ul li {
+            margin: 0 15px;
+        }
+
+        .nav-bar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-bar ul li a:hover {
+            color:  #aaa;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            background-color: #333;
+        }
+
+        .container-principal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .hero-content {
+            margin: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero-content:hover {
+            color: rgba(128, 4, 115, 0.8);
+            text-shadow: 0 0 10px rgba(128, 4, 115, 0.8);
+        }
+
+        .circles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Typing Effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid rgb(187, 121, 0);
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: rgb(160, 0, 253);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-bar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-bar ul li {
+                margin: 10px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2em;
+            }
+
+            .container-principal {
+                flex-direction: column;
+            }
+
+            .hero-image {
+                position: relative;
+                left: 0;
+                margin: 0 auto;
+            }
+
+            .hero-content {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="hero">
@@ -13,9 +201,9 @@
             <ul>
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="sobre_mi.html" class="nav-link">Sobre Mí</a></li>
-                <li><a href="sobre_mi.html" class="nav-link">Habilidades</a></li>
-                <li><a href="sobre_mi.html" class="nav-link">Proyectos</a></li>
-                <li><a href="sobre_mi.html" class="nav-link">Contacto</a></li>
+                <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
         <div class="container-principal">
@@ -23,14 +211,82 @@
                 <h1 id="changing-text" class="typewriter"></h1>
             </div>
             <div class="hero-image">
-                <img src="./src/img/fondo.jpg" alt="Imagen de Pablo">
+                <img src="src/img/fondo.jpg" alt="Imagen de Pablo">
             </div>
         </div>
     </header>
-    <div class="circles-container" id="circles-container">
-        <!-- Círculos se crearán dinámicamente aquí -->
-    </div>
+    <div class="circles-container" id="circles-container"></div>
 
-    <script src="src/js/index.js"></script>
+    <footer>
+        <p>&copy; 2024 Pablo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const textElement = document.getElementById("changing-text");
+            const texts = ["Pablo", "Programador"];
+            let currentIndex = 0;
+
+            const changeText = () => {
+                textElement.classList.remove("typewriter");
+                setTimeout(() => {
+                    textElement.textContent = texts[currentIndex];
+                    textElement.classList.add("typewriter");
+                    currentIndex = (currentIndex + 1) % texts.length;
+                }, 200);
+            };
+
+            changeText();
+            setInterval(changeText, 3000);
+
+            const numCircles = 20;
+            const circlesContainer = document.getElementById('circles-container');
+
+            function createCircle() {
+                const circle = document.createElement('div');
+                circle.classList.add('circle');
+                
+                const size = Math.random() * 50 + 10;
+                circle.style.width = `${size}px`;
+                circle.style.height = `${size}px`;
+
+                const randomX = Math.random() * window.innerWidth;
+                const randomY = Math.random() * window.innerHeight;
+                
+                circle.style.left = `${randomX}px`;
+                circle.style.top = `${randomY}px`;
+
+                circlesContainer.appendChild(circle);
+            }
+
+            for (let i = 0; i < numCircles; i++) {
+                createCircle();
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    const href = this.getAttribute('href');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 800);
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const footer = document.querySelector('footer');
+            const hero = document.querySelector('.hero');
+            const heroHeight = hero.offsetHeight;
+            
+            if (window.scrollY > heroHeight) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
