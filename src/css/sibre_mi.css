@@ -72,6 +72,8 @@ body::-webkit-scrollbar {
 }
 
 .hero-image img {
+    align-items: center;
+    justify-content: center;
     max-width: 200px;
     height: 200px;
     border-radius: 50%;
