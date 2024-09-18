@@ -200,8 +200,11 @@
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 Pablo. Todos los derechos reservados.</p>
+        <p>&copy; <span id="year"></span> Pablo. Todos los derechos reservados.</p>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
     <script src="src/js/index.js"></script>
 </body>
 
