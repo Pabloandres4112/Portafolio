@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.content{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+}
 .main-content{
     width: 900px;
     border: 2px solid rgb(64,64,64);
@@ -35,6 +41,7 @@
 .imagen{
     width: 320px;
     height: 350px;
+    border-radius: 10px;
 }
 .producconter{
     display: grid;
@@ -98,4 +105,9 @@ font-weight: 600;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: rgb(220,220,220.8);
+}
+
+
+.cantidad{
+    margin-left: 10px;
 }

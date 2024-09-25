@@ -1,3 +1,6 @@
+
+
+
 :root {
     --primary-bg-color: aqua;
     --secondary-bg-color: aquamarine;
@@ -8,6 +11,13 @@
     --seventh-bg-color: #4FE8C5;
     --eighth-bg-color: #077087;
     --ninth-bg-color: #1c92ad;
+}
+
+h1,h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 0.9s forwards; /* Animación de entrada */
 }
 
 .box-colors {

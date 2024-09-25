@@ -38,6 +38,7 @@ body::-webkit-scrollbar {
 }
 
 .project {
+    height: 250px;
     flex: 1 0 21%; /* Ajusta el ancho de cada proyecto */
     text-align: center;
     background-color: #333; /* Fondo más oscuro para cada proyecto */
@@ -64,7 +65,7 @@ body::-webkit-scrollbar {
 
 .project img {
     max-width: 100%;
-    height: auto;
+    height: 150px;
     border-radius: 5px; /* Bordes redondeados para las imágenes */
 }
 
@@ -80,4 +81,22 @@ body::-webkit-scrollbar {
     100% {
         transform: translateY(10px); /* Desplazamiento hacia abajo */
     }
+}
+
+
+
+.project1 {
+    flex: 1 0 21%; /* Ajusta el ancho de cada proyecto */
+    text-align: center;
+    background-color: #333; /* Fondo más oscuro para cada proyecto */
+    padding: 10px; /* Espacio interno dentro de cada proyecto */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+    animation: floating 3s infinite alternate ease-in-out; /* Animación de flotación */
+}
+
+.main-project1 {
+    grid-column: span 4; /* Ocupa cuatro columnas en el grid */
+    animation: none; /* Deshabilita la animación en el proyecto principal */
 }
