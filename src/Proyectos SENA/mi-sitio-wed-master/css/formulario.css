@@ -1,55 +1,74 @@
+/* Restablecer y configurar estilos básicos */
 * {
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-body {
+body, html {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #f3ec78, #af4261);
+    animation: gradientBG 10s ease infinite;
 }
 
-.center {
-    text-align: center;
+/* Animación de fondo */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .main-box {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 700px;
-    max-width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco con transparencia */
+    border-radius: 16px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 40px; /* Espaciado interno */
+    width: 500px; /* Ancho del contenedor */
+    max-width: 90%; /* Máximo ancho */
+    transform: scale(0.95);
+    animation: scaleUp 0.5s ease-out forwards;
+}
+
+/* Animación de entrada */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .form-titulo {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    color: #000000;
-    padding: 10px 0;
+    background-color: #af4261; /* Color del encabezado */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    color: #ffffff;
+    padding: 20px 0;
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-box {
     margin-bottom: 20px;
     text-align: left;
-    background-color: red;
-    border: 2px solid #ffffff; /* Agrega un borde blanco */
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
-}
-h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #333;
+}
 
 form {
     width: 100%;
@@ -57,40 +76,121 @@ form {
 
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    margin: 15px 0 5px;
+    font-weight: 500;
+    color: #333;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.4s ease-out forwards;
 }
 
 input[type="text"],
 select,
 input[type="radio"],
-input[type="checkbox"],
-input[type="button"] {
-    margin-top: 5px;
-    padding: 10px;
-    width: calc(100% - 20px);
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-input[type="radio"],
 input[type="checkbox"] {
-    margin-top: 10px;
+    margin-top: 5px;
+    padding: 12px;
+    width: calc(100% - 24px);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.4s ease-out forwards;
 }
 
+input[type="text"],
+select {
+    background-color: #fafafa;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #af4261;
+    box-shadow: 0 0 10px rgba(175, 66, 97, 0.2);
+    outline: none;
+}
+
+/* Estilos para radio y checkbox */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline-block;
+    cursor: pointer;
+    color: #555;
+    margin: 10px 15px 10px 0;
+}
+
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+    color: #af4261;
+    font-weight: bold;
+}
+
+/* Estilos para el botón */
 input[type="button"] {
-    background-color: rgb(0, 0, 0);
-    color: #fff;
+    background-color: #af4261;
+    color: #ffffff;
     border: none;
-    padding: 12px 24px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    padding: 12px;
+    border-radius: 6px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 input[type="button"]:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: #92154d;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+input[type="button"]:active {
+    background-color: #6d1036;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de transición secuencial para los inputs */
+label:nth-of-type(1) { animation-delay: 0.1s; }
+label:nth-of-type(2) { animation-delay: 0.15s; }
+label:nth-of-type(3) { animation-delay: 0.2s; }
+label:nth-of-type(4) { animation-delay: 0.25s; }
+input:nth-of-type(1) { animation-delay: 0.1s; }
+input:nth-of-type(2) { animation-delay: 0.15s; }
+input:nth-of-type(3) { animation-delay: 0.2s; }
+input:nth-of-type(4) { animation-delay: 0.25s; }
+select { animation-delay: 0.2s; }
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .main-box {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .form-titulo {
+        font-size: 1.5rem;
+        padding: 15px 0;
+    }
+
+    input[type="button"] {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }

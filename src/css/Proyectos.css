@@ -1,62 +1,119 @@
+/* Estilos generales */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #1f1f1f; /* Color de fondo oscuro */
-    color: #fff; /* Texto en color blanco */
-    font-family: Arial, sans-serif; /* Fuente del texto */
+    background-color: #121212; /* Fondo oscuro profundo */
+    color: #e0e0e0; /* Texto gris claro */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y limpia */
+    scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
+/* Estilos de scrollbar */
 body::-webkit-scrollbar {
-    display: none;
+    width: 8px;
 }
 
+body::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+/* Link de regreso */
 .return-link {
     position: fixed;
     top: 20px;
-    right: 20px; /* Ajusta la posición a la esquina superior derecha */
+    right: 20px; 
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #fff;
+    color: #1e88e5; /* Color azul para el link */
     font-size: 16px;
+    background-color: #1f1f1f; /* Fondo oscuro */
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.return-link svg {
-    width: 24px;
-    height: 24px;
-    margin-left: 5px; /* Ajusta el margen izquierdo del ícono */
+.return-link:hover {
+    background-color: #37474f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px); /* Efecto de elevación */
 }
 
+/* Contenedor principal */
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas con tamaño flexible */
-    gap: 20px; /* Espacio entre los proyectos */
-    padding: 20px; /* Espacio interno para separar del borde */
-    justify-items: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    padding: 40px 20px;
+    justify-content: center;
 }
 
-.project {
-    height: 250px;
-    flex: 1 0 21%; /* Ajusta el ancho de cada proyecto */
-    text-align: center;
-    background-color: #333; /* Fondo más oscuro para cada proyecto */
-    padding: 10px; /* Espacio interno dentro de cada proyecto */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
-    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
-    animation: floating 3s infinite alternate ease-in-out; /* Animación de flotación */
-}
-
-.main-project {
-    grid-column: span 4; /* Ocupa cuatro columnas en el grid */
-    animation: none; /* Deshabilita la animación en el proyecto principal */
-}
-
+/* Título de sección */
 .section-title {
     text-align: center;
-    margin-bottom: 20px; /* Espacio entre el título y los proyectos */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #1e88e5;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo para cada proyecto */
+.project {
+    background-color: #1f1f1f; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project:hover img {
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+.project p {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #b0bec5;
+}
+
+/* Efectos al pasar el ratón sobre el proyecto */
+.project:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo especial para el proyecto principal */
+.main-project {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    color: #fff; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    animation: none;
+}
+
+.main-project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    }
 }
 
 .project:hover {

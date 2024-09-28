@@ -1,66 +1,79 @@
-
-
-
 :root {
-    --primary-bg-color: aqua;
-    --secondary-bg-color: aquamarine;
-    --tertiary-bg-color: goldenrod;
-    --fourth-bg-color: rgb(82, 255, 144);
-    --fifth-bg-color: rgb(31, 217, 188);
-    --sixth-bg-color: rgb(54, 26, 177);
+    --primary-bg-color: #00ffff;
+    --secondary-bg-color: #7fffd4;
+    --tertiary-bg-color: #daa520;
+    --fourth-bg-color: #52ff90;
+    --fifth-bg-color: #1fd9bc;
+    --sixth-bg-color: #361ab1;
     --seventh-bg-color: #4FE8C5;
     --eighth-bg-color: #077087;
     --ninth-bg-color: #1c92ad;
+    --font-color: #333;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-box-shadow-color: rgba(0, 0, 0, 0.3);
+    --transition-duration: 0.4s;
 }
 
-h1,h2{
-    display: flex;
-    justify-content: center;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: var(--font-color);
+    padding: 40px;
+    margin: 0;
+}
+
+h1 {
     text-align: center;
-    animation: fadeIn 0.9s forwards; /* Animación de entrada */
+    font-size: 2.5em;
+    color: var(--font-color);
+    margin-bottom: 20px;
+    animation: fadeIn var(--transition-duration) ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--font-color);
+    margin: 20px 0;
+    animation: fadeIn var(--transition-duration) ease-in-out;
 }
 
 .box-colors {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 .box-style {
-    width: calc(33.33% - 20px);
-    height: 300px;
-    margin-bottom: 20px;
-    border-radius: 12px; /* Más redondeado */
-    overflow: hidden;
+    width: calc(33% - 30px);
+    height: 200px;
+    margin: 15px;
+    border-radius: 16px;
     position: relative;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra más intensa */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    opacity: 0; /* Comenzar oculto */
-    animation: fadeIn 0.5s forwards; /* Animación de entrada */
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--box-shadow-color);
+    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+    animation: fadeIn var(--transition-duration) ease-in-out;
 }
 
 .box-style:hover {
-    transform: scale(1.1);
-}
-
-.box-style:hover .span {
     transform: translateY(-10px);
+    box-shadow: 0 6px 18px var(--hover-box-shadow-color);
 }
 
-.span {
+.box-style span {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    color: white;
-    font-size: 1.4em;
+    color: #fff;
+    font-size: 1.2em;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: transform 0.3s ease-in-out;
+    transition: color var(--transition-duration) ease;
+}
+
+.box-style span:hover {
+    color: #f8f9fa;
 }
 
 .box-1 {
@@ -97,4 +110,9 @@ h1,h2{
 
 .box-9 {
     background-color: var(--ninth-bg-color);
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1; transform: translateY(0);}
 }
