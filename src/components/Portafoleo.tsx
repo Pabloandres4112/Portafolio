@@ -8,6 +8,7 @@ import About from './componetesPortafoleo/About';
 import Projects from './componetesPortafoleo/Projects';
 import Contact from './componetesPortafoleo/Contact';
 import Footer from './componetesPortafoleo/Footer';
+import SistemaSolar from './Avatar3D';
 
 type SectionId = 'home' | 'about' | 'skills' | 'projects' | 'contact';
 
@@ -75,6 +76,10 @@ const Portfolio = () => {
       <section ref={sectionRefs.contact}>
         <Contact />
       </section>
+
+      <section className="mt-8">
+        <SistemaSolar/>
+       </section>
 
       <Footer />
     </div>
