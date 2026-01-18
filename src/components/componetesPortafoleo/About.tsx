@@ -46,7 +46,7 @@ const About: React.FC = () => {
               <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-purple-600/20 dark:to-pink-600/20 rounded-2xl flex items-center justify-center shadow-xl border-2 border-gray-200 dark:border-transparent dark:shadow-purple-500/10">
                 <span className="text-8xl">🚀</span>
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-transparent dark:shadow-pink-500/20">
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-lg shadow-pink-500/20">
                 <FaCode size={32} className="text-white" />
               </div>
             </div>
