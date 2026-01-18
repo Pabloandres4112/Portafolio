@@ -16,6 +16,8 @@ import {
   FaEye, 
   FaEyeSlash 
 } from 'react-icons/fa';
+import { useTheme } from '../../contexts/ThemeContext';
+import { translations } from '../../translations/translations';
 
 // ============================================================================
 // TIPOS Y INTERFACES
@@ -324,6 +326,9 @@ const floatingVariants = {
  * )
  */
 const SkillsSection: React.FC = () => {
+  const { language } = useTheme();
+  const t = translations[language];
+
   // ============================================================================
   // ESTADO Y REFS
   // ============================================================================
@@ -436,7 +441,7 @@ const SkillsSection: React.FC = () => {
           variants={staggerContainerVariants}
         >
           {/* Título de la sección */}
-          <SectionTitle />
+          <SectionTitle title={t.skills.title} />
 
           {/* Grid de habilidades */}
           <div className="relative">
@@ -470,11 +475,20 @@ const SkillsSection: React.FC = () => {
               showAllSkills={showAllSkills}
               totalSkills={SKILLS_DATA.length}
               onToggle={toggleShowAllSkills}
+              showAllText={t.skills.showAll}
+              showLessText={t.skills.showLess}
             />
           )}
 
           {/* Leyenda de experiencia */}
-          <ExperienceLegend />
+          <ExperienceLegend 
+            translations={{
+              advanced: t.skills.advanced,
+              intermediate: t.skills.intermediate,
+              basic: t.skills.basic,
+              beginner: t.skills.beginner
+            }}
+          />
         </motion.div>
       </section>
     </div>
@@ -522,9 +536,13 @@ BackgroundElements.displayName = 'BackgroundElements';
 /**
  * Componente del título de la sección
  */
-const SectionTitle: React.FC = React.memo(() => (
+interface SectionTitleProps {
+  title: string;
+}
+
+const SectionTitle: React.FC<SectionTitleProps> = React.memo(({ title }) => (
   <motion.h2
-    className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent relative"
+    className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent relative"
     variants={fadeInUpVariants}
   >
     <motion.span
@@ -533,7 +551,7 @@ const SectionTitle: React.FC = React.memo(() => (
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
     >
-      Habilidades Técnicas
+      {title}
     </motion.span>
     <motion.div
       className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"
@@ -861,6 +879,8 @@ interface ShowMoreButtonProps {
   showAllSkills: boolean;
   totalSkills: number;
   onToggle: () => void;
+  showAllText: string;
+  showLessText: string;
 }
 
 /**
@@ -869,7 +889,9 @@ interface ShowMoreButtonProps {
 const ShowMoreButton: React.FC<ShowMoreButtonProps> = React.memo(({
   showAllSkills,
   totalSkills,
-  onToggle
+  onToggle,
+  showAllText,
+  showLessText
 }) => (
   <motion.div
     className="flex justify-center mt-12"
@@ -904,7 +926,7 @@ const ShowMoreButton: React.FC<ShowMoreButtonProps> = React.memo(({
           backgroundPosition: showAllSkills ? ['0%', '100%'] : ['100%', '0%']
         }}
       >
-        {showAllSkills ? 'Ver menos habilidades' : `Ver todas las habilidades (${totalSkills})`}
+        {showAllSkills ? showLessText : `${showAllText} (${totalSkills})`}
       </motion.span>
 
       <motion.div
@@ -929,42 +951,60 @@ ShowMoreButton.displayName = 'ShowMoreButton';
 /**
  * Componente de la leyenda de experiencia
  */
-const ExperienceLegend: React.FC = React.memo(() => (
-  <motion.div
-    className="mt-16 flex flex-wrap justify-center gap-8"
-    variants={fadeInUpVariants}
-  >
-    {EXPERIENCE_LEGEND.map((item, index) => (
-      <motion.div
-        key={item.level}
-        className="flex items-center gap-3 bg-white/5 backdrop-blur-sm px-4 py-3 rounded-xl border border-white/10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 + index * 0.1 }}
-        whileHover={{
-          scale: 1.05,
-          backgroundColor: "rgba(255,255,255,0.1)",
-          transition: { duration: 0.2 }
-        }}
-      >
-        <motion.span
-          className={item.color}
-          animate={{
-            scale: [1, 1.1, 1]
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            delay: index * 0.2
+interface ExperienceLegendProps {
+  translations: {
+    advanced: string;
+    intermediate: string;
+    basic: string;
+    beginner: string;
+  };
+}
+
+const ExperienceLegend: React.FC<ExperienceLegendProps> = React.memo(({ translations: levelTranslations }) => {
+  const legendItems = [
+    { level: levelTranslations.advanced, stars: '⭐⭐⭐⭐⭐', color: 'text-green-400' },
+    { level: levelTranslations.intermediate, stars: '⭐⭐⭐⭐', color: 'text-blue-400' },
+    { level: levelTranslations.basic, stars: '⭐⭐⭐', color: 'text-yellow-400' },
+    { level: levelTranslations.beginner, stars: '⭐⭐', color: 'text-orange-400' }
+  ];
+
+  return (
+    <motion.div
+      className="mt-16 flex flex-wrap justify-center gap-8"
+      variants={fadeInUpVariants}
+    >
+      {legendItems.map((item, index) => (
+        <motion.div
+          key={item.level}
+          className="flex items-center gap-3 bg-purple-50/50 dark:bg-white/5 backdrop-blur-sm px-4 py-3 rounded-xl border border-gray-200 dark:border-white/10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 + index * 0.1 }}
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: "rgba(168,85,247,0.1)",
+            transition: { duration: 0.2 }
           }}
         >
-          {item.stars}
-        </motion.span>
-        <span className="text-sm text-gray-300 font-medium">{item.level}</span>
-      </motion.div>
-    ))}
-  </motion.div>
-));
+          <motion.span
+            className={item.color}
+            animate={{
+              scale: [1, 1.1, 1]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: index * 0.2
+            }}
+          >
+            {item.stars}
+          </motion.span>
+          <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">{item.level}</span>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+});
 
 ExperienceLegend.displayName = 'ExperienceLegend';
 

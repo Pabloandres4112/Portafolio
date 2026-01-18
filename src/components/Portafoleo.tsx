@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import SkillsSection from './componetesPortafoleo/SkillsSection';
+import SkillsSection from './componetesPortafoleo/SkillsSectionNew';
 import Whasapp from './componetesPortafoleo/Whasapp';
 import Navbar from './componetesPortafoleo/Navbar';
 import Hero from './componetesPortafoleo/Hero';
@@ -53,7 +53,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
+    <div className="bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-gray-900 bg-gradient-to-br from-gray-50 via-purple-50 to-gray-50 text-gray-900 dark:text-white transition-colors duration-500">
       <Whasapp />
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 

@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaCode } from "react-icons/fa";
+import { useTheme } from '../../contexts/ThemeContext';
+import { translations } from '../../translations/translations';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -14,6 +16,9 @@ const staggerContainer = {
 };
 
 const About: React.FC = () => {
+  const { language } = useTheme();
+  const t = translations[language];
+
   return (
     <section
       id="about"
@@ -28,20 +33,20 @@ const About: React.FC = () => {
       >
         {/* 🔹 Título principal */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
           variants={fadeInUp}
         >
-          Sobre Mí
+          {t.about.title}
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* 🔹 Lado visual */}
           <motion.div variants={fadeInUp}>
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/10">
+              <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-purple-600/20 dark:to-pink-600/20 rounded-2xl flex items-center justify-center shadow-xl border-2 border-gray-200 dark:border-transparent dark:shadow-purple-500/10">
                 <span className="text-8xl">🚀</span>
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-lg shadow-pink-500/20">
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-transparent dark:shadow-pink-500/20">
                 <FaCode size={32} className="text-white" />
               </div>
             </div>
@@ -49,50 +54,40 @@ const About: React.FC = () => {
 
           {/* 🔹 Lado de texto */}
           <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-3xl font-bold text-white">
-              Desarrollador Full Stack en Formación
+            <h3 className="text-3xl font-bold text-black dark:text-white">
+              {t.about.subtitle}
             </h3>
 
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Soy <span className="text-purple-400 font-semibold">Pablo Andrés Perdomo</span>, 
-              desarrollador frontend y backend, graduado en 
-              <span className="text-pink-400 font-medium"> Análisis y Desarrollo de Software (ADSO) </span> 
-              por el SENA. Actualmente estoy en proceso de aplicar a la universidad, 
-              explorando opciones para continuar mi formación profesional en el área de tecnología.
-              Con cerca de medio año de experiencia práctica, he trabajado en proyectos como sistemas 
-              de manejo de usuarios, inventarios y aplicaciones móviles.
-            </p>
+            <p className="text-gray-900 dark:text-gray-300 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: t.about.description1 }} />
 
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Me apasiona crear soluciones funcionales y modernas enfocadas en la experiencia del usuario. 
-              Siempre busco aprender nuevas herramientas y metodologías que me permitan seguir creciendo 
-              como desarrollador y aportar en proyectos con impacto real.
+            <p className="text-gray-900 dark:text-gray-300 text-lg leading-relaxed">
+              {t.about.description2}
             </p>
 
             {/* 🔹 Tecnologías */}
             <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-purple-400">Frontend</h4>
-                <p className="text-sm text-gray-400">
-                  React, React Native, HTML, CSS, JavaScript
+              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-blue-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
+                <h4 className="font-semibold text-blue-600 dark:text-purple-400">{t.about.frontend}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-400">
+                  {t.about.frontendTech}
                 </p>
               </div>
 
-              <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-purple-400">Backend</h4>
-                <p className="text-sm text-gray-400">
-                  Node.js, PHP, Laravel, Python
+              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-purple-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
+                <h4 className="font-semibold text-purple-600 dark:text-purple-400">{t.about.backend}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-400">
+                  {t.about.backendTech}
                 </p>
               </div>
 
-              <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-purple-400">Bases de Datos</h4>
-                <p className="text-sm text-gray-400">MySQL, Firebase</p>
+              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-pink-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
+                <h4 className="font-semibold text-pink-600 dark:text-purple-400">{t.about.database}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-400">{t.about.databaseTech}</p>
               </div>
 
-              <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-purple-400">Herramientas</h4>
-                <p className="text-sm text-gray-400">Git, VS Code, Postman</p>
+              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-blue-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
+                <h4 className="font-semibold text-blue-600 dark:text-purple-400">{t.about.tools}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-400">{t.about.toolsTech}</p>
               </div>
             </div>
           </motion.div>

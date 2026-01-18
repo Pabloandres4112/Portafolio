@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { useTheme } from '../../contexts/ThemeContext';
+import { translations } from '../../translations/translations';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -54,6 +56,9 @@ const projects = [
 ];
 
 const Projects: React.FC = () => {
+  const { language } = useTheme();
+  const t = translations[language];
+
   return (
     <section className="min-h-screen py-20 px-6">
       <motion.div
@@ -65,10 +70,10 @@ const Projects: React.FC = () => {
       >
         {/* Título principal */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
           variants={fadeInUp}
         >
-          Proyectos Destacados
+          {t.projects.title}
         </motion.h2>
 
         {/* Contenedor flexible: tarjetas grandes */}
@@ -76,16 +81,16 @@ const Projects: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className="relative bg-gradient-to-b from-gray-900/80 to-gray-800/60 rounded-3xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/30 transition-all duration-500 group"
+              className="relative bg-white dark:bg-gradient-to-b dark:from-gray-900/80 dark:to-gray-800/60 rounded-3xl overflow-hidden shadow-lg border-2 border-gray-200 dark:border-white/10 hover:border-blue-500 dark:hover:border-purple-500/30 transition-all duration-300 group"
               variants={fadeInUp}
-              whileHover={{ scale: 1.03, y: -8 }}
+              whileHover={{ scale: 1.02, y: -6 }}
             >
               {/* Imagen */}
               <div className="relative h-56 overflow-hidden">
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               </div>
@@ -93,10 +98,10 @@ const Projects: React.FC = () => {
               {/* Contenido principal */}
               <div className="p-8 flex flex-col justify-between h-[calc(100%-14rem)]">
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-2xl font-bold mb-3 text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-purple-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-base leading-relaxed mb-5">
+                  <p className="text-gray-900 dark:text-gray-400 text-base leading-relaxed mb-5">
                     {project.description}
                   </p>
                 </div>
@@ -106,7 +111,7 @@ const Projects: React.FC = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-purple-600/20 text-purple-300 text-sm rounded-full font-medium"
+                      className="px-3 py-1 bg-blue-100 text-blue-700 dark:bg-purple-600/20 dark:text-purple-300 text-sm rounded-full font-medium border border-blue-200 dark:border-transparent"
                     >
                       {tech}
                     </span>
@@ -119,19 +124,19 @@ const Projects: React.FC = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-purple-400 font-semibold transition-colors"
-                    whileHover={{ scale: 1.1 }}
+                    className="flex items-center gap-2 text-blue-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-semibold transition-colors"
+                    whileHover={{ scale: 1.08 }}
                   >
-                    <FaGithub /> Código
+                    <FaGithub /> {t.projects.code}
                   </motion.a>
                   <motion.a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-300 hover:text-pink-400 font-semibold transition-colors"
-                    whileHover={{ scale: 1.1 }}
+                    className="flex items-center gap-2 text-purple-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 font-semibold transition-colors"
+                    whileHover={{ scale: 1.08 }}
                   >
-                    <FaExternalLinkAlt /> Demo
+                    <FaExternalLinkAlt /> {t.projects.demo}
                   </motion.a>
                 </div>
               </div>
