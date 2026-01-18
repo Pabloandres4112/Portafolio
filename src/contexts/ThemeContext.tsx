@@ -27,8 +27,13 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('theme');
-    return (saved as Theme) || 'light';
+    // Siempre iniciar en modo claro por defecto
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('theme');
+      // Si no hay nada guardado, usar 'light'
+      return saved === 'dark' ? 'dark' : 'light';
+    }
+    return 'light';
   });
 
   const [language, setLanguage] = useState<Language>(() => {
@@ -36,9 +41,26 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     return (saved as Language) || 'es';
   });
 
+  // Aplicar tema inicial inmediatamente al montar
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, []);
+
+  // Actualizar cuando cambie el tema
   useEffect(() => {
     localStorage.setItem('theme', theme);
-    document.documentElement.classList.toggle('dark', theme === 'dark');
+    const root = document.documentElement;
+    
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
   }, [theme]);
 
   useEffect(() => {

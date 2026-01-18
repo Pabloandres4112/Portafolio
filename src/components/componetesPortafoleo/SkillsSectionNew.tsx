@@ -21,7 +21,7 @@ const SkillsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="min-h-screen py-20 px-4 bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-gray-900">
+    <section className="min-h-screen py-20 px-4 bg-gray-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-gray-900">
       <motion.div
         className="max-w-6xl mx-auto"
         initial={{ opacity: 0 }}

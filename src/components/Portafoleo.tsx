@@ -53,7 +53,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-gray-900 bg-gradient-to-br from-gray-50 via-purple-50 to-gray-50 text-gray-900 dark:text-white transition-colors duration-500">
+    <div className="bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-500">
       <Whasapp />
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 

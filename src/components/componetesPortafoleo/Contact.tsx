@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
   const [state, handleSubmit] = useForm("xrbkqrrn");
 
   return (
-    <section className="min-h-screen py-20 px-4 bg-purple-50/30 dark:bg-black/10 backdrop-blur-sm">
+    <section className="min-h-screen py-20 px-4 bg-gray-50 dark:bg-black/10">
       <motion.div
         className="max-w-5xl mx-auto"
         initial="initial"

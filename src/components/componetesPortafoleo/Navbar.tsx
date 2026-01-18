@@ -120,7 +120,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
                 <motion.button
                   key={item.id}
                   onClick={() => handleClick(item.id)}
-                  className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+                  className={`block w-full text-left px-3 py-2 rounded-lg transition-all ${
+                    activeSection === item.id
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                      : 'text-black dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-blue-50 dark:hover:bg-white/10'
+                  }`}
                   whileHover={{ x: 10 }}
                 >
                   {item.label}
@@ -131,17 +135,17 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
               <div className="flex gap-2 pt-2">
                 <motion.button
                   onClick={toggleLanguage}
-                  className="flex-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 font-semibold"
+                  className="flex-1 px-3 py-2 rounded-lg bg-white dark:bg-white/10 text-blue-600 dark:text-gray-300 font-semibold border-2 border-gray-300 dark:border-transparent"
                   whileTap={{ scale: 0.95 }}
                 >
                   {language === 'es' ? 'EN' : 'ES'}
                 </motion.button>
                 <motion.button
                   onClick={toggleTheme}
-                  className="flex-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 flex items-center justify-center gap-2"
+                  className="flex-1 px-3 py-2 rounded-lg bg-white dark:bg-white/10 text-blue-600 dark:text-gray-300 flex items-center justify-center gap-2 border-2 border-gray-300 dark:border-transparent"
                   whileTap={{ scale: 0.95 }}
                 >
-                  {theme === 'dark' ? <><FaSun /> Claro</> : <><FaMoon /> Oscuro</>}
+                  {theme === 'dark' ? <><FaSun /> {t.nav.light || 'Claro'}</> : <><FaMoon /> {t.nav.dark || 'Oscuro'}</>}
                 </motion.button>
               </div>
             </div>
