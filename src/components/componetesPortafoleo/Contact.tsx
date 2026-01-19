@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
   const [state, handleSubmit] = useForm("xrbkqrrn");
 
   return (
-    <section className="min-h-screen py-20 px-4 bg-gray-50 dark:bg-black/10">
+    <section className="min-h-screen py-20 px-4 bg-white dark:bg-gradient-to-br dark:from-purple-950 dark:via-slate-900 dark:to-purple-950">
       <motion.div
         className="max-w-5xl mx-auto"
         initial="initial"
@@ -51,8 +51,8 @@ const Contact: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <motion.div variants={fadeInUp}>
-            <h3 className="text-2xl font-bold mb-6 text-black dark:text-white">{t.contact.subtitle}</h3>
-            <p className="text-gray-900 dark:text-gray-400 mb-8 text-lg">
+            <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-purple-100">{t.contact.subtitle}</h3>
+            <p className="text-gray-800 dark:text-gray-200 mb-8 text-lg">
               {t.contact.description}
             </p>
 
@@ -151,15 +151,15 @@ const ContactCard = ({ href, icon, title, subtitle }: ContactCardProps) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="flex items-center gap-4 p-4 bg-white dark:bg-white/5 rounded-lg hover:bg-blue-50 dark:hover:bg-white/10 transition-all border-2 border-gray-300 dark:border-transparent hover:border-blue-500 dark:hover:border-transparent"
+    className="flex items-center gap-4 p-4 bg-white dark:bg-purple-900/20 rounded-lg hover:bg-blue-50 dark:hover:bg-purple-900/40 transition-all border-2 border-gray-300 dark:border-purple-500/50 hover:border-blue-500 dark:hover:border-purple-400"
     whileHover={{ x: 8 }}
   >
     <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-purple-600 dark:to-pink-600 rounded-lg flex items-center justify-center">
       {icon}
     </div>
     <div>
-      <h4 className="font-semibold text-black dark:text-white">{title}</h4>
-      <p className="text-gray-700 dark:text-gray-400 text-sm">{subtitle}</p>
+      <h4 className="font-semibold text-gray-900 dark:text-purple-100">{title}</h4>
+      <p className="text-gray-700 dark:text-gray-300 text-sm">{subtitle}</p>
     </div>
   </motion.a>
 );
@@ -179,7 +179,7 @@ const InputField = ({ name, placeholder, type = "text", state }: FieldProps) => 
       name={name}
       placeholder={placeholder}
       required
-      className="w-full p-4 bg-white dark:bg-white/5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-purple-500 transition-all text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+      className="w-full p-4 bg-white dark:bg-purple-900/20 border-2 border-gray-300 dark:border-purple-500/50 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-purple-400 transition-all text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
     />
     <ValidationError prefix={name} field={name} errors={state.errors} className="text-red-400 text-sm mt-1" />
   </div>
@@ -192,7 +192,7 @@ const TextareaField = ({ name, placeholder, rows = 6, state }: FieldProps) => (
       placeholder={placeholder}
       rows={rows}
       required
-      className="w-full p-4 bg-white dark:bg-white/5 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-purple-500 transition-all resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+      className="w-full p-4 bg-white dark:bg-purple-900/20 border-2 border-gray-300 dark:border-purple-500/50 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-purple-400 transition-all resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
     />
     <ValidationError prefix={name} field={name} errors={state.errors} className="text-red-400 text-sm mt-1" />
   </div>

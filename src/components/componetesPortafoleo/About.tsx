@@ -54,40 +54,40 @@ const About: React.FC = () => {
 
           {/* 🔹 Lado de texto */}
           <motion.div variants={fadeInUp} className="space-y-6">
-            <h3 className="text-3xl font-bold text-black dark:text-white">
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
               {t.about.subtitle}
             </h3>
 
-            <p className="text-gray-900 dark:text-gray-300 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: t.about.description1 }} />
+            <p className="text-gray-800 dark:text-gray-100 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: t.about.description1 }} />
 
-            <p className="text-gray-900 dark:text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-800 dark:text-gray-100 text-lg leading-relaxed">
               {t.about.description2}
             </p>
 
             {/* 🔹 Tecnologías */}
             <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-blue-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-blue-600 dark:text-purple-400">{t.about.frontend}</h4>
-                <p className="text-sm text-gray-800 dark:text-gray-400">
+              <div className="bg-white dark:bg-purple-900/20 p-4 rounded-lg border-2 border-gray-300 dark:border-purple-500/50 hover:border-blue-500 hover:shadow-lg dark:hover:bg-purple-900/40 transition-all">
+                <h4 className="font-semibold text-blue-600 dark:text-purple-300">{t.about.frontend}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-200">
                   {t.about.frontendTech}
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-purple-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-purple-600 dark:text-purple-400">{t.about.backend}</h4>
-                <p className="text-sm text-gray-800 dark:text-gray-400">
+              <div className="bg-white dark:bg-purple-900/20 p-4 rounded-lg border-2 border-gray-300 dark:border-purple-500/50 hover:border-purple-500 hover:shadow-lg dark:hover:bg-purple-900/40 transition-all">
+                <h4 className="font-semibold text-purple-600 dark:text-purple-300">{t.about.backend}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-200">
                   {t.about.backendTech}
                 </p>
               </div>
 
-              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-pink-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-pink-600 dark:text-purple-400">{t.about.database}</h4>
-                <p className="text-sm text-gray-800 dark:text-gray-400">{t.about.databaseTech}</p>
+              <div className="bg-white dark:bg-purple-900/20 p-4 rounded-lg border-2 border-gray-300 dark:border-purple-500/50 hover:border-pink-500 hover:shadow-lg dark:hover:bg-purple-900/40 transition-all">
+                <h4 className="font-semibold text-pink-600 dark:text-purple-300">{t.about.database}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-200">{t.about.databaseTech}</p>
               </div>
 
-              <div className="bg-white dark:bg-white/5 p-4 rounded-lg border-2 border-gray-300 dark:border-transparent hover:border-blue-500 hover:shadow-lg dark:hover:bg-white/10 transition-all">
-                <h4 className="font-semibold text-blue-600 dark:text-purple-400">{t.about.tools}</h4>
-                <p className="text-sm text-gray-800 dark:text-gray-400">{t.about.toolsTech}</p>
+              <div className="bg-white dark:bg-purple-900/20 p-4 rounded-lg border-2 border-gray-300 dark:border-purple-500/50 hover:border-blue-500 hover:shadow-lg dark:hover:bg-purple-900/40 transition-all">
+                <h4 className="font-semibold text-blue-600 dark:text-purple-300">{t.about.tools}</h4>
+                <p className="text-sm text-gray-800 dark:text-gray-200">{t.about.toolsTech}</p>
               </div>
             </div>
           </motion.div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import { useTheme } from '../contexts/ThemeContext';
 import SkillsSection from './componetesPortafoleo/SkillsSectionNew';
 import Whasapp from './componetesPortafoleo/Whasapp';
 import Navbar from './componetesPortafoleo/Navbar';
@@ -13,6 +13,7 @@ import Footer from './componetesPortafoleo/Footer';
 type SectionId = 'home' | 'about' | 'skills' | 'projects' | 'contact';
 
 const Portfolio = () => {
+  const { theme: _currentTheme } = useTheme(); // Obtener el tema para forzar re-renders
   const sectionRefs: Record<SectionId, React.MutableRefObject<HTMLElement | null>> = {
     home: useRef(null),
     about: useRef(null),
@@ -53,7 +54,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-purple-900 dark:to-gray-900 text-gray-900 dark:text-white transition-colors duration-500">
+    <div className="bg-white dark:bg-gradient-to-br dark:from-purple-950 dark:via-slate-900 dark:to-purple-950 text-gray-900 dark:text-white transition-colors duration-500">
       <Whasapp />
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 

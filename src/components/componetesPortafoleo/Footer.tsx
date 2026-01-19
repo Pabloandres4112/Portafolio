@@ -11,14 +11,14 @@ const Footer: React.FC = () => {
 
   return (
     <motion.footer
-      className="border-t-2 border-gray-300 dark:border-white/10 py-8 px-4 bg-white/50 dark:bg-black/20"
+      className="border-t-2 border-gray-200 dark:border-purple-500/30 py-8 px-4 bg-white dark:bg-gradient-to-r dark:from-purple-950 dark:to-slate-900"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-black dark:text-gray-400">
+        <p className="text-gray-700 dark:text-purple-200">
           © {new Date().getFullYear()} Pablo Andrés Perdomo. {t.footer.rights}
         </p>
       </div>

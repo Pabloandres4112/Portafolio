@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
         {/* Subtítulo claro y enfocado */}
         <motion.h2
-          className="text-2xl md:text-3xl font-semibold text-black dark:text-gray-300 mb-6"
+          className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-purple-100 mb-6"
           variants={fadeInUp}
         >
           {t.hero.subtitle}
@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
         {/* Descripción profesional */}
         <motion.p
-          className="text-lg text-gray-800 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg text-gray-800 dark:text-gray-200 mb-12 max-w-2xl mx-auto leading-relaxed"
           variants={fadeInUp}
         >
           {t.hero.description}
@@ -89,7 +89,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           <motion.a
             href="/cv/PabloAndres_CV.pdf"
             download
-            className="px-8 py-4 border-2 border-gray-400 dark:border-gray-400 text-gray-900 dark:text-gray-300 rounded-full font-semibold text-lg flex items-center gap-2 hover:border-blue-600 hover:bg-blue-50 dark:hover:border-white dark:hover:bg-white/10 transition-all"
+            className="px-8 py-4 border-2 border-gray-400 dark:border-purple-400 text-gray-900 dark:text-purple-200 rounded-full font-semibold text-lg flex items-center gap-2 hover:border-blue-600 hover:bg-blue-50 dark:hover:border-purple-300 dark:hover:bg-purple-900/40 transition-all"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -99,7 +99,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           {/* Contactar */}
           <motion.a
             href="mailto:perdomo4112@gmail.com?subject=Interesado%20en%20tu%20perfil"
-            className="px-8 py-4 border-2 border-gray-400 dark:border-gray-400 text-gray-900 dark:text-gray-300 rounded-full font-semibold text-lg flex items-center gap-2 hover:border-purple-600 hover:bg-purple-50 dark:hover:border-white dark:hover:bg-white/10 transition-all"
+            className="px-8 py-4 border-2 border-gray-400 dark:border-purple-400 text-gray-900 dark:text-purple-200 rounded-full font-semibold text-lg flex items-center gap-2 hover:border-purple-600 hover:bg-purple-50 dark:hover:border-purple-300 dark:hover:bg-purple-900/40 transition-all"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

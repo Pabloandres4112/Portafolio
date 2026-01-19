@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full z-50 bg-white/95 dark:bg-black/20 backdrop-blur-lg border-b-2 border-gray-300 dark:border-white/10 transition-colors duration-300"
+      className="fixed top-0 w-full z-50 bg-white/98 dark:bg-gradient-to-r dark:from-purple-950/95 dark:to-slate-900/95 backdrop-blur-lg border-b-2 border-gray-200 dark:border-purple-500/30 transition-colors duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -109,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="md:hidden bg-white/95 dark:bg-black/90 backdrop-blur-lg"
+            className="md:hidden bg-white dark:bg-gradient-to-b dark:from-purple-900/95 dark:to-slate-900/95 backdrop-blur-lg"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

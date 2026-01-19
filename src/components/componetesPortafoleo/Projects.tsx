@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
   const t = translations[language];
 
   return (
-    <section className="min-h-screen py-20 px-6">
+    <section className="min-h-screen py-20 px-6 bg-white dark:bg-gradient-to-br dark:from-purple-950 dark:via-slate-900 dark:to-purple-950">
       <motion.div
         className="max-w-7xl mx-auto"
         initial="initial"
@@ -81,7 +81,7 @@ const Projects: React.FC = () => {
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className="relative bg-white dark:bg-gradient-to-b dark:from-gray-900/80 dark:to-gray-800/60 rounded-3xl overflow-hidden shadow-lg border-2 border-gray-200 dark:border-white/10 hover:border-blue-500 dark:hover:border-purple-500/30 transition-all duration-300 group"
+              className="relative bg-white dark:bg-gradient-to-b dark:from-purple-900/40 dark:to-slate-800/40 rounded-3xl overflow-hidden shadow-lg border-2 border-gray-200 dark:border-purple-500/30 hover:border-blue-500 dark:hover:border-purple-400 transition-all duration-300 group"
               variants={fadeInUp}
               whileHover={{ scale: 1.02, y: -6 }}
             >
@@ -98,10 +98,10 @@ const Projects: React.FC = () => {
               {/* Contenido principal */}
               <div className="p-8 flex flex-col justify-between h-[calc(100%-14rem)]">
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-purple-100 group-hover:text-blue-600 dark:group-hover:text-purple-300 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-900 dark:text-gray-400 text-base leading-relaxed mb-5">
+                  <p className="text-gray-800 dark:text-gray-200 text-base leading-relaxed mb-5">
                     {project.description}
                   </p>
                 </div>
@@ -111,7 +111,7 @@ const Projects: React.FC = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-blue-100 text-blue-700 dark:bg-purple-600/20 dark:text-purple-300 text-sm rounded-full font-medium border border-blue-200 dark:border-transparent"
+                      className="px-3 py-1 bg-blue-100 text-blue-700 dark:bg-purple-600/40 dark:text-purple-200 text-sm rounded-full font-medium border border-blue-200 dark:border-purple-500/50"
                     >
                       {tech}
                     </span>

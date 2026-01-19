@@ -30,8 +30,17 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     // Siempre iniciar en modo claro por defecto
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('theme');
-      // Si no hay nada guardado, usar 'light'
-      return saved === 'dark' ? 'dark' : 'light';
+      const initialTheme = saved === 'dark' ? 'dark' : 'light';
+      
+      // Aplicar inmediatamente al inicializar
+      const root = document.documentElement;
+      if (initialTheme === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+      
+      return initialTheme;
     }
     return 'light';
   });
@@ -41,7 +50,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     return (saved as Language) || 'es';
   });
 
-  // Aplicar tema inicial inmediatamente al montar
+  // Aplicar tema cuando cambie
   useEffect(() => {
     const root = document.documentElement;
     if (theme === 'dark') {
@@ -49,18 +58,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     } else {
       root.classList.remove('dark');
     }
-  }, []);
-
-  // Actualizar cuando cambie el tema
-  useEffect(() => {
     localStorage.setItem('theme', theme);
-    const root = document.documentElement;
-    
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
   }, [theme]);
 
   useEffect(() => {
