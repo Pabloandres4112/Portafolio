@@ -61,11 +61,11 @@ interface Skill {
 /**
  * Interface para los items de la leyenda de experiencia
  */
-interface ExperienceLegendItem {
-  level: ExperienceLevel;
-  stars: string;
-  color: string;
-}
+// interface ExperienceLegendItem {
+//   level: ExperienceLevel;
+//   stars: string;
+//   color: string;
+// }
 
 // ============================================================================
 // CONSTANTES Y CONFIGURACIÓN
@@ -99,12 +99,12 @@ const INITIAL_VISIBLE_SKILLS = 6;
 /**
  * Datos de la leyenda de experiencia
  */
-const EXPERIENCE_LEGEND: ExperienceLegendItem[] = [
-  { level: 'Avanzado', stars: '⭐⭐⭐⭐⭐', color: 'text-green-400' },
-  { level: 'Intermedio', stars: '⭐⭐⭐⭐', color: 'text-blue-400' },
-  { level: 'Básico', stars: '⭐⭐⭐', color: 'text-yellow-400' },
-  { level: 'Principiante', stars: '⭐⭐', color: 'text-orange-400' }
-];
+// const EXPERIENCE_LEGEND: ExperienceLegendItem[] = [
+//   { level: 'Avanzado', stars: '⭐⭐⭐⭐⭐', color: 'text-green-400' },
+//   { level: 'Intermedio', stars: '⭐⭐⭐⭐', color: 'text-blue-400' },
+//   { level: 'Básico', stars: '⭐⭐⭐', color: 'text-yellow-400' },
+//   { level: 'Principiante', stars: '⭐⭐', color: 'text-orange-400' }
+// ];
 
 /**
  * Configuración de todas las habilidades técnicas

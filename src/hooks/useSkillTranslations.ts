@@ -1,8 +1,8 @@
 import { useTheme } from '../contexts/ThemeContext';
 import { translations } from '../translations/translations';
 
-type ExperienceLevel = 'Avanzado' | 'Intermedio' | 'Básico' | 'Principiante';
-type SkillCategory = 'Frontend' | 'Backend' | 'Mobile' | 'Database' | 'Tools';
+export type ExperienceLevel = 'Avanzado' | 'Intermedio' | 'Básico' | 'Principiante';
+export type SkillCategory = 'Frontend' | 'Backend' | 'Mobile' | 'Database' | 'Tools';
 
 export const useSkillTranslations = () => {
   const { language } = useTheme();

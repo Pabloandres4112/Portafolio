@@ -7,7 +7,9 @@ export const translations = {
       skills: 'Habilidades',
       projects: 'Proyectos',
       contact: 'Contacto',
-      portfolio: 'Mi Portafolio'
+      portfolio: 'Mi Portafolio',
+      light: 'Claro',
+      dark: 'Oscuro'
     },
     // Hero
     hero: {
@@ -125,7 +127,9 @@ export const translations = {
       skills: 'Skills',
       projects: 'Projects',
       contact: 'Contact',
-      portfolio: 'My Portfolio'
+      portfolio: 'My Portfolio',
+      light: 'Light',
+      dark: 'Dark'
     },
     // Hero
     hero: {
