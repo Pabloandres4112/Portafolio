@@ -27,20 +27,18 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Siempre iniciar en modo claro por defecto
+    // Intentar leer del localStorage primero (tiene prioridad)
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('theme');
-      const initialTheme = saved === 'dark' ? 'dark' : 'light';
       
-      // Aplicar inmediatamente al inicializar
-      const root = document.documentElement;
-      if (initialTheme === 'dark') {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
+      // Si hay un tema guardado, usar ese (el toggle manual tiene prioridad)
+      if (saved === 'dark' || saved === 'light') {
+        return saved;
       }
       
-      return initialTheme;
+      // Si no hay guardado, usar prefers-color-scheme SOLO UNA VEZ al inicializar
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return prefersDark ? 'dark' : 'light';
     }
     return 'light';
   });
@@ -50,16 +48,42 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     return (saved as Language) || 'es';
   });
 
-  // Aplicar tema cuando cambie
+  // Aplicar tema cuando cambie y guardar en localStorage
+  // Esto SOBRESCRIBE completamente el prefers-color-scheme del sistema
   useEffect(() => {
     const root = document.documentElement;
+    
+    // Aplicar clase dark o light para controlar Tailwind CSS
     if (theme === 'dark') {
       root.classList.add('dark');
+      root.classList.remove('light');
     } else {
       root.classList.remove('dark');
+      root.classList.add('light');
     }
+    
+    // Guardar la preferencia en localStorage
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Prevenir que prefers-color-scheme sincronice automáticamente después del primer render
+  useEffect(() => {
+    // Crear un listener para detectar cambios de prefers-color-scheme
+    // y rechazarlos (ignorar completamente después del primer render)
+    const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const handleChange = (_e: MediaQueryListEvent) => {
+      // NO cambiar el tema automáticamente
+      // El usuario ya ha establecido su preferencia manual
+      console.log('prefers-color-scheme cambió, pero ignorando porque el usuario controla el tema');
+    };
+
+    mediaQueryList.addEventListener('change', handleChange);
+
+    return () => {
+      mediaQueryList.removeEventListener('change', handleChange);
+    };
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('language', language);
